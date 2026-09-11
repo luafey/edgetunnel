@@ -104,7 +104,7 @@ export default {
 					}
 					const res = await fetch(Pages静态页面 + '/login');
 					let html = await res.text();
-					html = html.replace(/(<div class="footer-hint">)[\s\S]*?(<\/div>)/gi, '$1&nbsp;</div>').replace(/登录设置页面/g, '管理后台');
+					html = html..replace(/(<div class="footer-hint">)[\s\S]*?(<\/div>)/gi, '$1</div>').replace(/登录设置页面/g, '管理后台');
 					return new Response(html, {
 						status: res.status,
 						headers: { ...Object.fromEntries(res.headers), 'Content-Type': 'text/html;charset=utf-8' }
