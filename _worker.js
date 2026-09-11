@@ -102,7 +102,13 @@ export default {
 							return 响应;
 						}
 					}
-					return fetch(Pages静态页面 + '/login');
+					const res = await fetch(Pages静态页面 + '/login');
+					let html = await res.text();
+					html = html.replace(/由\s*edgetunnel\s*强力驱动/g, '').replace(/登录设置页面/g, '管理后台');
+					return new Response(html, {
+						status: res.status,
+						headers: { ...Object.fromEntries(res.headers), 'Content-Type': 'text/html;charset=utf-8' }
+					});
 				} else if (访问路径 === 'admin' || 访问路径.startsWith('admin/')) {//验证cookie后响应管理页面
 					const cookies = request.headers.get('Cookie') || '';
 					const authCookie = cookies.split(';').find(c => c.trim().startsWith('auth='))?.split('=')[1];
