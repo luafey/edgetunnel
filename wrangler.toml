@@ -1,14 +1,27 @@
 name = "v20251104"
 main = "_worker.js"
-compatibility_date = "2025-11-04"
+compatibility_date = "2026-09-08"
 keep_vars = true
+workers_dev = false  # 禁用默认分配的 *.workers.dev 域名
 
-#[[kv_namespaces]]
-#binding = "KV"			#KV绑定名默认不可修改
+[[kv_namespaces]]
+binding = "KV"			#KV绑定名默认不可修改
 #id = ""				#KV数据库id
 
-# 关闭默认的 workers.dev 域名分配
-workers_dev = false
+# 关闭 AI 智能路由放置，保持纯正的无状态节点属性
+[placement]
+mode = "off"
+
+# 静态文件地址
+[assets]
+directory = "./public"                   
+binding = "ASSETS"
+
+# 高级运行时兼容性安全阀
+compatibility_flags = [ 
+  "nodejs_compat",                       # 开启原生 Node.js 组件兼容性
+  "streams_enable_read_request_body"     # 解锁 HTTP 流式请求体读取，增强 XHTTP 协议稳定性
+]
 
 # 开启Workers 日志
 [observability.logs]
