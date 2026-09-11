@@ -9,8 +9,8 @@ binding = "KV"			#KV绑定名默认不可修改
 #id = ""				#KV数据库id
 
 # 关闭 AI 智能路由放置，保持纯正的无状态节点属性
-[placement]
-mode = "off"
+#[placement]
+#mode = "off"
 
 # 静态文件地址
 [assets]
