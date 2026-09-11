@@ -1,4 +1,4 @@
-name = "v20251104"
+name = ""
 main = "_worker.js"
 compatibility_date = "2026-09-08"
 keep_vars = true
@@ -18,10 +18,10 @@ directory = "./public"
 binding = "ASSETS"
 
 # 高级运行时兼容性安全阀
-compatibility_flags = [ 
-  "nodejs_compat",                       # 开启原生 Node.js 组件兼容性
-  "streams_enable_read_request_body"     # 解锁 HTTP 流式请求体读取，增强 XHTTP 协议稳定性
-]
+#compatibility_flags = [ 
+#  "nodejs_compat",                       # 开启原生 Node.js 组件兼容性
+#  "streams_enable_read_request_body"     # 解锁 HTTP 流式请求体读取，增强 XHTTP 协议稳定性
+#]
 
 # 开启Workers 日志
 [observability.logs]
