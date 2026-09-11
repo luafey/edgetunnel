@@ -1,4 +1,4 @@
-name = ""
+#name = ""
 main = "_worker.js"
 compatibility_date = "2026-09-08"
 keep_vars = true
@@ -13,9 +13,9 @@ binding = "KV"			#KV绑定名默认不可修改
 #mode = "off"
 
 # 静态文件地址
-[assets]
-directory = "./public"                   
-binding = "ASSETS"
+#[assets]
+#directory = "./public"                   
+#binding = "ASSETS"
 
 # 高级运行时兼容性安全阀
 #compatibility_flags = [ 
