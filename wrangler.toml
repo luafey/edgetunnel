@@ -6,3 +6,13 @@ keep_vars = true
 #[[kv_namespaces]]
 #binding = "KV"			#KV绑定名默认不可修改
 #id = ""				#KV数据库id
+
+# 关闭默认的 workers.dev 域名分配
+workers_dev = false
+
+# 开启Workers 日志
+[observability.logs]
+enabled = true
+head_sampling_rate = 1
+invocation_logs = true
+persist = true
